@@ -1,0 +1,68 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Genuine - UI Templates</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="cleartype" content="on">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <script>
+  // If fonts are cached, skip FFO.
+  if (sessionStorage.fontsLoaded === 'true') {
+    document.documentElement.classList.add("fonts-loaded")
+  }
+  else {
+    var script = document.createElement("script")
+    script.src = "/scripts/fontloader.built.js"
+    script.async = true
+    document.head.appendChild(script)
+  }
+  </script>
+
+  <link rel="stylesheet" href="/styles/screen.css">
+</head>
+
+<body>
+
+<header class="global-header">
+  <section class="wrapper">
+    [Global Header]
+  </section>
+</header>
+
+  <section class="wrapper">
+    <h1>Front End Template Directory</h1>
+    <h2></h2>
+
+    <h5>Utility</h5>
+    <ul>
+              <li><a href="/_grid.html">Grid Structure</a></li>
+              <li><a href="/_styleguide.html">Base Style Guide</a></li>
+          </ul>
+
+    <h5>Layouts</h5>
+    <ul>
+              <li><a href="t01-homepage.html">T01 - Homepage</a></li>
+              <li><a href="t02-inner-page.html">T02 - Inner Page</a></li>
+          </ul>
+  </section>
+
+<footer class="global-footer">
+  <section class="wrapper">
+    [Global Footer]
+  </section>
+</footer>
+
+<!-- Global script includes -->
+<script src="/scripts/app.built.js" async></script>
+
+</body>
+
+</html>
