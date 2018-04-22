@@ -1,0 +1,7 @@
+.toolbar{
+    background-color: darken(skyblue, 4);
+    height: auto;
+    @include breakpoint($tablet) {
+        height: 100vh;
+    }
+}

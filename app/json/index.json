@@ -1,15 +1,5 @@
 {
-  "title": "Front End Template Directory",
-  "utilityLinks": [
-      {
-        "name": "Grid Structure",
-        "link": "/_grid.html"
-      },
-      {
-        "name": "Base Style Guide",
-        "link": "/_styleguide.html"
-      }
-  ],
+  "title": "Email Template Editor",
   "layoutLinks": [
     {
       "name": "T01 - Homepage",

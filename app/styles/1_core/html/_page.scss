@@ -8,10 +8,13 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // Remove default tappable touch color in iOS
 }
 
-html {
-  font-size: 62.5%; // Sets up the Base 10 stuff
+html,body{
   height: 100%;
   min-height: 100vh;
+}
+
+html {
+  font-size: 62.5%; // Sets up the Base 10 stuff 
 }
 
 body {
@@ -22,4 +25,10 @@ body {
     font-family: $sans;
     font-weight: 400;
   }
+}
+
+.toolbar,
+.template-area{
+  height: 100vh;
+  padding:$spacing-unit;
 }

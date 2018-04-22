@@ -1,19 +1,11 @@
 {# layout.twig #}
-
 {% include '@includes/1_core/head.twig' %}
 
-{% if bodyClass is defined %}
-<body class="{{ bodyClass }}">
-{% else %}
 <body>
-{% endif %}
-
-{% include '@includes/4_regions/header.twig' %}
-
-{% block page %}{% endblock %}
-
-{% include '@includes/4_regions/footer.twig' %}
-
+    {% include '@includes/4_regions/header.twig' %}
+    <div class="wrapper row">
+        {% block toolbar %}{% endblock %}
+        {% block template %}{% endblock %}
+    </div>
 </body>
-
 </html>
