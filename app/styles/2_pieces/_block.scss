@@ -15,8 +15,11 @@
         top: 50%;
         transform:translate(-50%, -50%);
     }
-    &.editing .edit-area{
-        display:block;
+    &.editing{
+        border:1px solid red;
+        .edit-area{
+            display:block;
+        }
     }
     .edit-area{
         display:none;

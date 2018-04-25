@@ -11,6 +11,7 @@
     "last 4 versions"
   ],
   "devDependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^10.0.0",
     "autoprefixer": "^6.3.1",
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
@@ -51,7 +52,6 @@
     "require-dir": "^0.3.0",
     "sanitize.css": "^3.1.1",
     "susy": "^2.2.12",
-    "trumbowyg": "^2.10.0",
     "underscore": "^1.8.3",
     "webpack": "^1.12.12",
     "yargs": "^4.7.1"

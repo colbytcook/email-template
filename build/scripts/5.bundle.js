@@ -1,1 +1,0 @@
-webpackJsonp([5],{11:function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}e.exports=function e(t){n(this,e),this.el=t;var r=this.el.querySelectorAll(".delete");r.length>0&&r[0].addEventListener("click",function(e){e.preventDefault();var t=e.currentTarget.parentNode.parentNode;t.parentNode.removeChild(t)})}}});

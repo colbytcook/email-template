@@ -1,5 +1,5 @@
 <div class="block block--{{ name }}" draggable="true" aria-label="{{ name }} block" data-module="block{{ name | capitalize }}">
-    <div class="edit-area" data-module="{{ name }}Edit">
+    <div class="edit-area" data-type="{{ name }}Edit">
         {% block edit_area %}{% endblock %}
     </div>
     <div class="edit-container">

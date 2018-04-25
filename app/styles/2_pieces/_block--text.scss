@@ -2,4 +2,9 @@
     &:before{
         @extend %icon-text;
     }
+    textarea{
+        height:200px;
+        // resize: vertical;
+        width:100%;
+    }
 }

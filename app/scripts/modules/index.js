@@ -11,15 +11,6 @@ module.exports = {
     }
   },
   modules: {
-    blockdivider: require('./blockdivider/blockdivider.load'),
-    blockimage: require('./blockimage/blockimage.load'),
-    blocktext: require('./blocktext/blocktext.load'),
-    copyLink: require('./copyLink/copyLink.load'),
-    deleteLink: require('./deleteLink/deleteLink.load'),
-    dividerEdit: require('./dividerEdit/dividerEdit.load'),
-    drag: require('./drag/drag.load'),
-    editLink: require('./editLink/editLink.load'),
-    imageEdit: require('./imageEdit/imageEdit.load'),
-    textEdit: require('./textEdit/textEdit.load')
+    drag: require('./drag/drag.load')
   }
 }

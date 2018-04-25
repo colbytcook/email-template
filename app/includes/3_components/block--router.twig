@@ -1,9 +1,7 @@
-{# {% if name == 'image' %}
+{% if name == 'divider' %}
+  {% include '@includes/2_pieces/block/block--divider.twig' %}
+{% elseif name == 'image' %}
     {% include '@includes/2_pieces/block/block--image.twig' %}
-{% elseif name == 'divider' %}
-    {% include '@includes/2_pieces/block/block--divider.twig' %}
-{% else %}
-    {% include '@includes/2_pieces/block/block--text.twig' %}      
-    {% endif %} #}
-    
-{% include '@includes/2_pieces/block/block.twig' %}      
+{% elseif name == 'text' %}
+    {% include '@includes/2_pieces/block/block--text.twig' %}
+{% endif %}

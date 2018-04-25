@@ -1,7 +1,5 @@
 const dragula = require('dragula')
-const EditLink = require('../editLink/editLink.main.js');
-const CopyLink = require('../copyLink/copyLink.main.js');
-const DeleteLink = require('../deleteLink/deleteLink.main.js');
+const Block = require('../block/block.js')
 
 module.exports = class Drag {
   constructor(el){
@@ -19,9 +17,7 @@ module.exports = class Drag {
       ignoreInputTextSelection: true
     });
     drake.on('drop', (el) => {
-      const editLink = new EditLink(el)
-      const copyLink = new CopyLink(el)
-      const deleteLink = new DeleteLink(el)
+     const block = new Block(el)
     })
   }
 }
