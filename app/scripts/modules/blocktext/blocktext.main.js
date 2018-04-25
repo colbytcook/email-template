@@ -1,7 +1,6 @@
-module.exports = class Blocktext {
+module.exports = class BlockText {
   constructor(el){
     this.el = el
-    // console.log('text');
     
   }
 }

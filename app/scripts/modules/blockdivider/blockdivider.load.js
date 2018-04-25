@@ -1,6 +1,6 @@
 module.exports = ($el) => {
   require.ensure([], (require) => {
-    const Module = require('./blockdivider.main')
+    const Module = require('./blockDivider.main')
     new Module($el)
   })
 }

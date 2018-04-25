@@ -1,7 +1,6 @@
-module.exports = class Blockdivider {
+module.exports = class BlockDivider {
   constructor(el){
     this.el = el
-    // console.log('divider');
     
   }
 }

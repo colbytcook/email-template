@@ -16,7 +16,10 @@ module.exports = {
     blocktext: require('./blocktext/blocktext.load'),
     copyLink: require('./copyLink/copyLink.load'),
     deleteLink: require('./deleteLink/deleteLink.load'),
+    dividerEdit: require('./dividerEdit/dividerEdit.load'),
+    drag: require('./drag/drag.load'),
     editLink: require('./editLink/editLink.load'),
-    drag: require('./drag/drag.load')
+    imageEdit: require('./imageEdit/imageEdit.load'),
+    textEdit: require('./textEdit/textEdit.load')
   }
 }

@@ -1,6 +1,6 @@
-module.exports = class BlockImage {
+module.exports = class DividerEdit {
   constructor(el){
     this.el = el
-    
+
   }
 }
