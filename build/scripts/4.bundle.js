@@ -1,1 +1,25 @@
-webpackJsonp([4],{9:function(e,n){"use strict";function t(e,n){if(!(e instanceof n))throw new TypeError("Cannot call a class as a function")}e.exports=function e(n){t(this,e),this.el=n,this.el.addEventListener("click",function(e){e.preventDefault();var n=e.currentTarget.parentNode.parentNode,t=n.cloneNode(!0);n.parentNode.insertBefore(t,n.parentNode.firstChild)})}}});
+webpackJsonp([4],{
+
+/***/ 9:
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	module.exports = function CopyLink(el) {
+	  _classCallCheck(this, CopyLink);
+	
+	  this.el = el;
+	  this.el.addEventListener('click', function (e) {
+	    e.preventDefault();
+	    var block = e.currentTarget.parentNode.parentNode;
+	    var blockClone = block.cloneNode(true);
+	    block.parentNode.insertBefore(blockClone, block.parentNode.firstChild);
+	  });
+	};
+
+/***/ })
+
+});
+//# sourceMappingURL=4.bundle.js.map

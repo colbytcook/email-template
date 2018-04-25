@@ -1,1 +1,30 @@
-webpackJsonp([6],{13:function(t,n){"use strict";function e(t,n){if(!(t instanceof n))throw new TypeError("Cannot call a class as a function")}t.exports=function t(n){e(this,t),this.el=n,this.el.addEventListener("click",function(t){t.preventDefault();var n="editing",e=t.currentTarget.parentNode.parentNode;e.classList?e.classList.add(n):e.className+=" "+n})}}});
+webpackJsonp([6],{
+
+/***/ 13:
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	module.exports = function EditLink(el) {
+	  _classCallCheck(this, EditLink);
+	
+	  this.el = el;
+	  this.el.addEventListener('click', function (e) {
+	    e.preventDefault();
+	    var editClass = 'editing';
+	    var block = e.currentTarget.parentNode.parentNode;
+	    block;
+	    if (block.classList) {
+	      block.classList.add(editClass);
+	    } else {
+	      block.className += ' ' + editClass;
+	    }
+	  });
+	};
+
+/***/ })
+
+});
+//# sourceMappingURL=6.bundle.js.map
