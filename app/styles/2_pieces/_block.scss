@@ -1,0 +1,64 @@
+.block{
+    border:1px solid $blueDark;
+    height: 0;
+    max-width:300px;
+    padding-bottom: 33%;
+    position: relative;
+    width:50%;
+    &:before{
+        color:$blueDarkest;
+        display: block;
+        font-family:'icomoon';
+        font-size: 37px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform:translate(-50%, -50%);
+    }
+    &.editing .edit-area{
+        display:block;
+    }
+    .edit-area{
+        display:none;
+    }
+    .edit-container{
+        position: absolute;
+        right: -41px;
+        .edit-link{
+            background-color:$white;
+            display: block;
+            height: 40px;
+            position: relative;
+            width: 40px;
+            &:before{
+                color:$blueDark;
+                display:block;
+                font-family:'icomoon';
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform:translate(-50%, -50%);
+                transition: background-color 0.3s ease-in-out;
+            }
+            &:hover,
+            &:active{
+                background-color:lighten($blue, 20);
+            }
+            &.edit{
+                &:before{
+                    @extend %icon-edit;
+                }
+            }
+            &.copy{
+                &:before{
+                    @extend %icon-copy;
+                }
+            }
+            &.delete{
+                &:before{
+                    @extend %icon-delete;
+                }
+            }
+        }
+    }
+}

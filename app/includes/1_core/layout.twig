@@ -4,8 +4,11 @@
 <body>
     {% include '@includes/4_regions/header.twig' %}
     <div class="wrapper row">
-        {% block toolbar %}{% endblock %}
-        {% block template %}{% endblock %}
+        <div class="drag-container" data-module="drag">
+            {% block toolbar %}{% endblock %}
+            {% block template %}{% endblock %}
+        </div>
     </div>
+    {% include '@includes/4_regions/footer.twig' %}
 </body>
 </html>

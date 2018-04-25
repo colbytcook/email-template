@@ -1,5 +1,10 @@
-<div class="block {{ class }}" draggable="true" data-module="{{ module }}">
-    {% block content %}
-    {% endblock %}
+<div class="block block--{{ name }}" draggable="true" aria-label="{{ name }} block" data-module="block{{ name }}">
+    <div class="edit-area">
+        {% block edit_area %}{% endblock %}
+    </div>
+    <div class="edit-container">
+        <a href="#" class="edit-link edit" aria-label="edit this block" data-module="editLink"></a>
+        <a href="#" class="edit-link copy" aria-label="copy this block" data-module="copyLink"></a>
+        <a href="#" class="edit-link delete" aria-label="delete this block" data-module="deleteLink"></a>
+    </div>
 </div>
-  

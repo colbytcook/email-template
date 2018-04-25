@@ -17,16 +17,19 @@ $palettes: (
     white: (
       base: #fff,
     ),
-    brown: (
-      light: #faf5eb,
-      base: #614b2e,
-      dark: rgba(#020100, .12)
+    blue: (
+      base: skyblue,
+      dark: darken(skyblue, 10),
+      darkest: darken(skyblue, 40)
     )
   )
 );
 
-$white:   palette(white);
 $black:   palette(black);
+$blue: palette(blue);
+$blueDark: palette(blue, dark);
+$blueDarkest: palette(blue, darkest);
+$white:   palette(white);
 
 /** Ex. Light brown
 p {

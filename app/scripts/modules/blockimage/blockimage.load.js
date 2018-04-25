@@ -1,6 +1,6 @@
 module.exports = ($el) => {
   require.ensure([], (require) => {
-    const Module = require('./sampleModule.main')
+    const Module = require('./blockimage.main')
     new Module($el)
   })
 }

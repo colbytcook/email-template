@@ -1,0 +1,5 @@
+.block--divider{
+    &:before{
+        @extend %icon-divider;
+    }
+}

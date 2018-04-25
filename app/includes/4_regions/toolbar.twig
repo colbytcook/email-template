@@ -1,3 +1,5 @@
-<section class="span-12 span-4@tablet toolbar">
-    {% include '@includes/3_components/block--router.twig' %}
+<section id="toolbarArea" class="span-12 span-4@tablet toolbar">
+    {% for blockItem in blockList %}
+        {% include '@includes/3_components/block--router.twig' with blockItem only %}
+    {% endfor %}
 </section>

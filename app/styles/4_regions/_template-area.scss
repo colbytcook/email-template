@@ -1,0 +1,18 @@
+.template-area{
+    height: 100vh;
+    table,
+    thead,
+    tbody,
+    tr,
+    th,
+    td{
+        display: block;
+        padding: 0;
+        width: 100%;
+    }
+    .block{
+        display: block;
+        max-width:100%;
+        width:100%;
+    }
+}

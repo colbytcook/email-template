@@ -1,13 +1,14 @@
 {
   "title": "Email Template Editor",
-  "layoutLinks": [
+  "blockList": [
     {
-      "name": "T01 - Homepage",
-      "link": "t01-homepage.html"
+      "name": "text"
     },
     {
-      "name": "T02 - Inner Page",
-      "link": "t02-inner-page.html"
+      "name": "image"
+    },
+    {
+      "name": "divider"
     }
   ]
 }

@@ -31,10 +31,75 @@
 <body>
     <header class="global-header">
   <section class="wrapper">
-    <h1>Front End Template Directory</h1>
+    <h1>Email Template Editor</h1>
   </section>
 </header>
     <div class="wrapper row">
-                    </div>
+        <div class="drag-container" data-module="drag">
+              <section id="toolbarArea" class="span-12 span-4@tablet toolbar">
+            
+    
+<div class="block block--text" draggable="true" aria-label="text block" data-module="blocktext">
+    <div class="edit-area">
+            </div>
+    <div class="edit-container">
+        <a href="#" class="edit-link edit" aria-label="edit this block" data-module="editLink"></a>
+        <a href="#" class="edit-link copy" aria-label="copy this block" data-module="copyLink"></a>
+        <a href="#" class="edit-link delete" aria-label="delete this block" data-module="deleteLink"></a>
+    </div>
+</div>
+      
+            
+    
+<div class="block block--image" draggable="true" aria-label="image block" data-module="blockimage">
+    <div class="edit-area">
+            </div>
+    <div class="edit-container">
+        <a href="#" class="edit-link edit" aria-label="edit this block" data-module="editLink"></a>
+        <a href="#" class="edit-link copy" aria-label="copy this block" data-module="copyLink"></a>
+        <a href="#" class="edit-link delete" aria-label="delete this block" data-module="deleteLink"></a>
+    </div>
+</div>
+      
+            
+    
+<div class="block block--divider" draggable="true" aria-label="divider block" data-module="blockdivider">
+    <div class="edit-area">
+            </div>
+    <div class="edit-container">
+        <a href="#" class="edit-link edit" aria-label="edit this block" data-module="editLink"></a>
+        <a href="#" class="edit-link copy" aria-label="copy this block" data-module="copyLink"></a>
+        <a href="#" class="edit-link delete" aria-label="delete this block" data-module="deleteLink"></a>
+    </div>
+</div>
+      
+    </section>
+              <section id="templateArea" class="span-12 span-8@tablet template-area">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <div id="headerArea" class="drag-area"></div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div id="contentArea" class="drag-area"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="footerArea" class="drag-area"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            </div>
+    </div>
+    <!-- Global script includes -->
+<script src="/scripts/app.built.js" async></script>
 </body>
 </html>

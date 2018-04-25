@@ -1,5 +1,5 @@
 .global-header{
-    background-color:skyblue;
+    background-color:$blue;
     padding: $spacing-unit * 1.5 0;
-    border-bottom: 1px solid darken(skyblue, 10);
+    border-bottom: 1px solid $blueDark;
 }

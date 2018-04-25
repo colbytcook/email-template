@@ -1,7 +1,12 @@
 .toolbar{
-    background-color: darken(skyblue, 4);
+    background-color: $blue;
+    display: flex;
     height: auto;
+    justify-content: space-between;
     @include breakpoint($tablet) {
         height: 100vh;
+    }
+    .edit-container{
+        // display: none !important;
     }
 }

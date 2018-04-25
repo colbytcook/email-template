@@ -1,0 +1,5 @@
+.block--image{
+    &:before{
+        @extend %icon-image;
+    }
+}

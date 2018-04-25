@@ -18,7 +18,7 @@
 // =============================================================================
 // Font Face
 // =============================================================================
-@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff2 woff) {
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff) {
   $src: null;
   $extmods: ();
 
@@ -56,7 +56,7 @@
 @include font-face('Roboto', '../fonts/roboto/roboto-regular', 400, normal);
 
 // Icons
-@include font-face('Icomoon', '../fonts/Icomoon/Icomoon', 400, normal);
+@include font-face('icomoon', '../fonts/icomoon/icomoon', 400, normal);
 
 // System Font stack
 // https://css-tricks.com/snippets/css/system-font-stack/
@@ -66,7 +66,7 @@ $fallbackSans: $systemFont;
 
 $sans: 'Roboto', $fallbackSans;
 
-$iconfont: 'Icomoon';
+$iconfont: 'icomoon';
 
 
 // ========================================================================= //

@@ -1,7 +1,9 @@
-{% if block.type == 'image' %}
+{# {% if name == 'image' %}
     {% include '@includes/2_pieces/block/block--image.twig' %}
-{% elseif block.type == 'text' %}
+{% elseif name == 'divider' %}
     {% include '@includes/2_pieces/block/block--divider.twig' %}
 {% else %}
     {% include '@includes/2_pieces/block/block--text.twig' %}      
-{% endif %}
+    {% endif %} #}
+    
+{% include '@includes/2_pieces/block/block.twig' %}      
