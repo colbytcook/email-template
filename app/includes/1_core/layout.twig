@@ -2,12 +2,10 @@
 {% include '@includes/1_core/head.twig' %}
 
 <body>
-    {% include '@includes/4_regions/header.twig' %}
-    <div class="wrapper row">
-        <div class="drag-container" data-module="drag">
-            {% block toolbar %}{% endblock %}
-            {% block template %}{% endblock %}
-        </div>
+    {% include '@includes/4_regions/header.twig' with header only %}
+    <div class="drag-container" data-module="drag">
+        {% block toolbar %}{% endblock %}
+        {% block template %}{% endblock %}
     </div>
     {% include '@includes/4_regions/footer.twig' %}
 </body>

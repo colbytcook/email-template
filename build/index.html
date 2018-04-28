@@ -30,14 +30,27 @@
 
 <body>
     <header class="global-header">
-  <section class="wrapper">
-    <h1>Email Template Editor</h1>
-  </section>
+  <div class="logo-container">
+    <img src="./images/logo.png" alt="Klaviyo Logo">
+  </div>
+  
+    
+  
+  
+  
 </header>
-    <div class="wrapper row">
-        <div class="drag-container" data-module="drag">
-              <section id="toolbarArea" class="span-12 span-4@tablet toolbar">
-                <div class="block block--text" draggable="true" aria-label="text block" data-module="blockText">
+    <div class="drag-container" data-module="drag">
+          <section id="toolbarArea" class="span-12 span-4@tablet toolbar">
+    <div class="content-area">
+        <h1>Admin Panel</h1>
+        <p>To start, please drag a content block into the email template.</p>
+    </div>
+    <div class="block-container">
+        <div class="block-area">
+                                <div class="block block--text" draggable="true" aria-label="text block" data-module="blockText">
+    <div class="content-container">
+        <h3>Text</h3>
+    </div>
     <div class="edit-area" data-type="textEdit">
             <textarea name="content" id="editor"></textarea>
     </div>
@@ -47,7 +60,10 @@
         <a href="#" class="edit-link delete" aria-label="delete this block" data-module="deleteLink"></a>
     </div>
 </div>
-                <div class="block block--image" draggable="true" aria-label="image block" data-module="blockImage">
+                                <div class="block block--image" draggable="true" aria-label="image block" data-module="blockImage">
+    <div class="content-container">
+        <h3>Image</h3>
+    </div>
     <div class="edit-area" data-type="imageEdit">
             Image Editor
     </div>
@@ -57,7 +73,10 @@
         <a href="#" class="edit-link delete" aria-label="delete this block" data-module="deleteLink"></a>
     </div>
 </div>
-              <div class="block block--divider" draggable="true" aria-label="divider block" data-module="blockDivider">
+                              <div class="block block--divider" draggable="true" aria-label="divider block" data-module="blockDivider">
+    <div class="content-container">
+        <h3>Divider</h3>
+    </div>
     <div class="edit-area" data-type="dividerEdit">
             Divider Editor
     </div>
@@ -67,32 +86,35 @@
         <a href="#" class="edit-link delete" aria-label="delete this block" data-module="deleteLink"></a>
     </div>
 </div>
-    </section>
-              <section id="templateArea" class="span-12 span-8@tablet template-area">
-    <table>
-        <thead>
-            <tr>
-                <th>
-                    <div id="headerArea" class="drag-area"></div>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div id="contentArea" class="drag-area"></div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="footerArea" class="drag-area"></div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-            </div>
+                    </div>
     </div>
+</section>
+          <section id="templateArea" class="span-12 span-8@tablet template-area">
+    <div class="email-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <div id="headerArea" class="drag-area"></div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div id="contentArea" class="drag-area"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="footerArea" class="drag-area"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+        </div>
     <!-- Global script includes -->
 <script src="/scripts/app.built.js" async></script>
 </body>

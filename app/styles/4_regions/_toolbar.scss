@@ -1,10 +1,54 @@
 .toolbar{
-    background-color: $blue;
-    display: flex;
+    background-color: $gray;
     height: auto;
-    justify-content: space-between;
-    @include breakpoint($tablet) {
+    left: 0;
+    padding: $spacing-unit $spacing-unit * 2;
+    position: fixed;
+    text-align: center;
+    top: 46px;
+    width: 100%;
+    z-index:100;
+    @include breakpoint($desktop) {
         height: 100vh;
+        max-width: $leftColumnWidth;
+        text-align: left;
+        top: 66px;
+    }
+    h1,
+    p{
+        display:none;
+        @include breakpoint($desktop) {
+            display:block;
+        }
+    }
+    h1{
+        width: 100%;
+    }
+    p{
+        @include font-size(12, 18);
+        margin-bottom: $spacing-unit;
+        @include breakpoint($desktop) {
+            @include font-size(14, 20);
+            margin-bottom: $spacing-unit * 2.5;
+        }
+    }
+    .block-container{
+        display:inline-block;
+        @include breakpoint($desktop){
+            display: block;
+            width:100%;
+        }
+    }
+    .block-area{
+        background-color: lighten($gray, 10);
+        border-radius:6px;
+        display: flex;
+        justify-content: space-between;
+        padding: $spacing-unit;
+        @include breakpoint($desktop){
+            display: block;
+            width:100%;
+        }
     }
     .edit-container{
         display: none !important;

@@ -1,5 +1,8 @@
 {
-  "title": "Email Template Editor",
+  "title": "Admin Panel",
+  "header": {
+    "image": "./images/logo.png"
+  },
   "blockList": [
     {
       "name": "text"

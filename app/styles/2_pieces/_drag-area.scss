@@ -1,11 +1,11 @@
 .drag-area{
-    border:1px dotted $blue;
+    border:1px dotted $green;
     display: block;
     height: auto;
     min-height:20px;
     padding:$spacing-unit;
     width:100%;
     &:hover{
-        background-color: lighten($blue, 10);
+        // background-color: lighten($green, 10);
     }
 }

@@ -15,21 +15,27 @@ $palettes: (
       base: #504d4b
     ),
     white: (
-      base: #fff,
+      base: #fff
     ),
-    blue: (
-      base: skyblue,
-      dark: darken(skyblue, 10),
-      darkest: darken(skyblue, 40)
+    gray: (
+      base: #f1f3f2,
+      dark: #363941
+    ),
+    green: (
+      base: #24ad69
+    ),
+    yellow: (
+      base: #f2de50
     )
   )
 );
 
-$black:   palette(black);
-$blue: palette(blue);
-$blueDark: palette(blue, dark);
-$blueDarkest: palette(blue, darkest);
-$white:   palette(white);
+$black: palette(black);
+$green: palette(green);
+$gray: palette(gray);
+$grayDark: palette(gray, dark);
+$yellow: palette(yellow);
+$white: palette(white);
 
 /** Ex. Light brown
 p {

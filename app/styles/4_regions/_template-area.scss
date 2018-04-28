@@ -1,5 +1,18 @@
 .template-area{
     height: 100vh;
+    padding-top: 180px;
+    position: relative;
+    text-align:center;
+    width:100%;
+    @include breakpoint($desktop){
+        padding-left: calc(#{$leftColumnWidth} + #{$spacing-unit});
+        padding-top: 0;
+    }
+    .email-container{
+        display: inline-block;
+        max-width:600px;
+        width:100%;
+    }
     table,
     thead,
     tbody,
