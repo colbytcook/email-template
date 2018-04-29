@@ -17,12 +17,12 @@ webpackJsonp([1],[
 	
 	  this.el = el;
 	
-	  var drake = dragula([document.querySelector('#toolbarArea'), document.querySelector('#headerArea'), document.querySelector('#contentArea'), document.querySelector('#footerArea')], {
+	  var drake = dragula([document.querySelector('#dragArea'), document.querySelector('#headerArea'), document.querySelector('#contentArea'), document.querySelector('#footerArea')], {
 	    copy: function copy(el, source) {
-	      return source === document.querySelector('#toolbarArea');
+	      return source === document.querySelector('#dragArea');
 	    },
 	    accepts: function accepts(el, target) {
-	      return target !== document.querySelector('#toolbarArea');
+	      return target !== document.querySelector('#dragArea');
 	    },
 	    invalid: function invalid(el, handle) {
 	      return false;
@@ -1439,6 +1439,7 @@ webpackJsonp([1],[
 	var EditDivider = __webpack_require__(17);
 	var EditImage = __webpack_require__(18);
 	var EditText = __webpack_require__(19);
+	var Save = __webpack_require__(22);
 	
 	module.exports = function () {
 	  function Block(el) {
@@ -1449,6 +1450,26 @@ webpackJsonp([1],[
 	  }
 	
 	  _createClass(Block, [{
+	    key: 'clickEvents',
+	    value: function clickEvents(el, constructor) {
+	      var editLink = el.querySelectorAll('.edit');
+	      var copyLink = el.querySelectorAll('.copy');
+	      var deleteLink = el.querySelectorAll('.delete');
+	      var saveLink = el.querySelectorAll('.save');
+	      if (copyLink.length > 0) {
+	        copyLink[0].addEventListener('click', this.copy.bind(constructor));
+	      }
+	      if (deleteLink.length > 0) {
+	        deleteLink[0].addEventListener('click', this.delete);
+	      }
+	      if (editLink.length > 0) {
+	        editLink[0].addEventListener('click', this.edit.bind(constructor));
+	      }
+	      if (saveLink.length > 0) {
+	        saveLink[0].addEventListener('click', this.save.bind(constructor));
+	      }
+	    }
+	  }, {
 	    key: 'copy',
 	    value: function copy(e) {
 	      e.preventDefault();
@@ -1456,6 +1477,7 @@ webpackJsonp([1],[
 	      var blockClone = block.cloneNode(true);
 	      block.parentNode.insertBefore(blockClone, block.parentNode.firstChild);
 	      this.clickEvents(blockClone);
+	      var save = new Save(e);
 	    }
 	  }, {
 	    key: 'delete',
@@ -1463,6 +1485,7 @@ webpackJsonp([1],[
 	      e.preventDefault();
 	      var block = e.currentTarget.parentNode.parentNode;
 	      block.parentNode.removeChild(block);
+	      var save = new Save(e);
 	    }
 	  }, {
 	    key: 'edit',
@@ -1472,8 +1495,22 @@ webpackJsonp([1],[
 	      e.preventDefault();
 	      var editClass = 'editing';
 	      var editArea = 'edit-area';
+	      var activeClass = "active";
 	      var block = e.currentTarget.parentNode.parentNode;
 	      var blockChildren = block.children;
+	      if (e.currentTarget.classList) {
+	        if (e.currentTarget.classList.contains(activeClass)) {
+	          e.currentTarget.classList.remove(activeClass);
+	        } else {
+	          e.currentTarget.classList.add(activeClass);
+	        }
+	      } else {
+	        if (new RegExp('(^| )' + activeClass + '( |$)', 'gi').test(e.currentTarget.activeClass)) {
+	          e.currentTarget.activeClass = e.currentTarget.activeClass.replace(new RegExp('(^|\\b)' + activeClass.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+	        } else {
+	          block.className += ' ' + activeClass;
+	        }
+	      }
 	      if (block.classList) {
 	        block.classList.add(editClass);
 	      } else {
@@ -1481,7 +1518,6 @@ webpackJsonp([1],[
 	      }
 	      for (var c = 0; c < blockChildren.length; c++) {
 	        var ce = blockChildren[c];
-	        // const eae = false
 	        var defineType = function defineType(el) {
 	          if (typeof el.dataset != 'undefined') {
 	            if (el.dataset.type === 'textEdit') {
@@ -1521,20 +1557,10 @@ webpackJsonp([1],[
 	      var editText = new EditText(el);
 	    }
 	  }, {
-	    key: 'clickEvents',
-	    value: function clickEvents(el, constructor) {
-	      var editLink = el.querySelectorAll('.edit');
-	      var copyLink = el.querySelectorAll('.copy');
-	      var deleteLink = el.querySelectorAll('.delete');
-	      if (copyLink.length > 0) {
-	        copyLink[0].addEventListener('click', this.copy.bind(constructor));
-	      }
-	      if (deleteLink.length > 0) {
-	        deleteLink[0].addEventListener('click', this.delete);
-	      }
-	      if (editLink.length > 0) {
-	        editLink[0].addEventListener('click', this.edit.bind(constructor));
-	      }
+	    key: 'save',
+	    value: function save(e) {
+	      e.preventDefault();
+	      var saveEmail = new Save(this);
 	    }
 	  }]);
 	
@@ -1590,14 +1616,16 @@ webpackJsonp([1],[
 	
 	  this.el = el;
 	  var editorValue = void 0;
-	  _ckeditor5BuildClassic2.default.create(this.el.getElementsByTagName('textarea')[0], {
-	    toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|', 'undo', 'redo']
-	  }).then(function (editor) {
-	    console.log('Editor was initialized', editor);
-	    editorValue = editor;
-	  }).catch(function (error) {
-	    console.error(error);
-	  });
+	  var ckEditor = el.querySelector('.ck-editor');
+	  if (ckEditor === null) {
+	    _ckeditor5BuildClassic2.default.create(this.el.getElementsByTagName('textarea')[0], {
+	      toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|', 'undo', 'redo']
+	    }).then(function (editor) {
+	      editorValue = editor;
+	    }).catch(function (error) {
+	      console.error(error);
+	    });
+	  }
 	};
 
 /***/ }),
@@ -11981,6 +12009,119 @@ webpackJsonp([1],[
 	return jQuery;
 	} );
 
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	// import $ from 'jquery' 
+	
+	module.exports = function () {
+	  function Save(el) {
+	    _classCallCheck(this, Save);
+	
+	    // this.el = el
+	
+	    this.writeData(el);
+	    if (this.storageAvailable) {
+	      this.saveToStorage();
+	    }
+	  }
+	
+	  _createClass(Save, [{
+	    key: 'saveText',
+	    value: function saveText(el) {
+	      var textContent = el.querySelector('.ck-content').innerHTML;
+	      // console.log('save edit');
+	      var ckCheck = /data-cke-filler/i;
+	      if (!textContent.match(ckCheck)) {
+	        var editingClass = 'editing';
+	        var block = el.parentNode;
+	        // console.log(textContent);
+	
+	        // console.log(el.previousElementSibling.innerHTML);
+	        console.log(block);
+	
+	        el.previousElementSibling.innerHTML = textContent;
+	        if (block.classList) {
+	          block.classList.remove(editingClass);
+	        } else {
+	          block.editingClass = block.editingClass.replace(new RegExp('(^|\\b)' + editingClass.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+	        }
+	        // console.log('default');
+	        // console.log(textContent);
+	        // console.log(typeof textContent);
+	
+	        // console.log(el.previousElementSibling);
+	      }
+	    }
+	  }, {
+	    key: 'saveToStorage',
+	    value: function saveToStorage() {
+	      if (!localStorage.getItem('emailData')) {
+	        // this.populateStorage();
+	      } else {
+	        this.setStorage();
+	      }
+	    }
+	  }, {
+	    key: 'setStorage',
+	    value: function setStorage() {
+	
+	      // var currentColor = localStorage.getItem('bgcolor');
+	      // var currentFont = localStorage.getItem('font');
+	      // var currentImage = localStorage.getItem('image');
+	
+	      // document.getElementById('bgcolor').value = currentColor;
+	      // document.getElementById('font').value = currentFont;
+	      // document.getElementById('image').value = currentImage;
+	
+	      // htmlElem.style.backgroundColor = '#' + currentColor;
+	      // pElem.style.fontFamily = currentFont;
+	      // imgElem.setAttribute('src', currentImage);
+	
+	
+	    }
+	  }, {
+	    key: 'storageAvailable',
+	    value: function storageAvailable(type) {
+	      try {
+	        var storage = window[type],
+	            x = '__storage_test__';
+	        storage.setItem(x, x);
+	        storage.removeItem(x);
+	        return true;
+	      } catch (e) {
+	        return e instanceof DOMException && e.code === 22;
+	      }
+	    }
+	  }, {
+	    key: 'writeData',
+	    value: function writeData(el) {
+	      var editArea = el.el.children[1];
+	      // console.log(editArea)
+	      if (typeof editArea.dataset != 'undefined') {
+	        if (editArea.dataset.type === 'textEdit') {
+	          this.saveText(editArea);
+	        } else if (editArea.dataset.type === 'imageEdit') {
+	          // this.editImage(el) 
+	        } else if (editArea.dataset.type === 'dividerEdit') {
+	          // this.editDivider(el)
+	        }
+	      }
+	      // console.log(el.el.children[1])
+	      // el.parentNode
+	    }
+	  }]);
+	
+	  return Save;
+	}();
 
 /***/ })
 ]);

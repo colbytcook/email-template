@@ -10,6 +10,7 @@ $mobileBlock: 60px;
     max-width:200px;
     padding: $spacing-unit;
     position: relative;
+    text-align: left;
     transition: background-color 0.3s ease-in-out;
     width:$mobileBlock;
     &:last-child{
@@ -31,6 +32,9 @@ $mobileBlock: 60px;
         }
         &:before{
             color:$grayDark;
+        }
+        .edit-container{
+            display:block;
         }
     }
     &:before{
@@ -63,22 +67,34 @@ $mobileBlock: 60px;
         transition: color 0.3s ease-in-out;
     }
     &.editing{
-        border:1px solid red;
         .edit-area{
             display:block;
+        }
+        .content-container{
+            display:none;
         }
     }
     .edit-area{
         display:none;
+        text-align:center;
+        .ck-editor{
+            text-align:left;
+        }
+    }
+    .button{
+        margin-top: 20px;
     }
     .edit-container{
+        display:none;
         position: absolute;
         right: -41px;
+        top: 0;
         .edit-link{
             background-color:$white;
             display: block;
             height: 40px;
             position: relative;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
             width: 40px;
             &:before{
                 color:$green;
@@ -88,11 +104,16 @@ $mobileBlock: 60px;
                 position: absolute;
                 top: 50%;
                 transform:translate(-50%, -50%);
-                transition: background-color 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
             }
             &:hover,
-            &:active{
-                // background-color:lighten($blue, 20);
+            &:active,
+            &.active{
+                background-color:$green;
+                border:1px solid darken($green, 5);
+                &:before{
+                    color:$white;
+                }
             }
             &.edit{
                 &:before{

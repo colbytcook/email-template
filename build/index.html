@@ -40,50 +40,53 @@
   
 </header>
     <div class="drag-container" data-module="drag">
-          <section id="toolbarArea" class="span-12 span-4@tablet toolbar">
+          <section class="span-12 span-4@tablet toolbar">
     <div class="content-area">
         <h1>Admin Panel</h1>
         <p>To start, please drag a content block into the email template.</p>
     </div>
     <div class="block-container">
-        <div class="block-area">
-                                <div class="block block--text" draggable="true" aria-label="text block" data-module="blockText">
+        <div class="block-area" id="dragArea">
+                                <div class="block block--text" draggable="true" aria-label="text block">
     <div class="content-container">
         <h3>Text</h3>
     </div>
     <div class="edit-area" data-type="textEdit">
             <textarea name="content" id="editor"></textarea>
+        <a href="#" class="button save">Save</a>
     </div>
     <div class="edit-container">
-        <a href="#" class="edit-link edit" aria-label="edit this block" data-module="editLink"></a>
-        <a href="#" class="edit-link copy" aria-label="copy this block" data-module="copyLink"></a>
-        <a href="#" class="edit-link delete" aria-label="delete this block" data-module="deleteLink"></a>
+        <a href="#" class="edit-link edit" aria-label="edit this block"></a>
+        <a href="#" class="edit-link copy" aria-label="copy this block"></a>
+        <a href="#" class="edit-link delete" aria-label="delete this block"></a>
     </div>
 </div>
-                                <div class="block block--image" draggable="true" aria-label="image block" data-module="blockImage">
+                                <div class="block block--image" draggable="true" aria-label="image block">
     <div class="content-container">
         <h3>Image</h3>
     </div>
     <div class="edit-area" data-type="imageEdit">
             Image Editor
+        <a href="#" class="button save">Save</a>
     </div>
     <div class="edit-container">
-        <a href="#" class="edit-link edit" aria-label="edit this block" data-module="editLink"></a>
-        <a href="#" class="edit-link copy" aria-label="copy this block" data-module="copyLink"></a>
-        <a href="#" class="edit-link delete" aria-label="delete this block" data-module="deleteLink"></a>
+        <a href="#" class="edit-link edit" aria-label="edit this block"></a>
+        <a href="#" class="edit-link copy" aria-label="copy this block"></a>
+        <a href="#" class="edit-link delete" aria-label="delete this block"></a>
     </div>
 </div>
-                              <div class="block block--divider" draggable="true" aria-label="divider block" data-module="blockDivider">
+                              <div class="block block--divider" draggable="true" aria-label="divider block">
     <div class="content-container">
         <h3>Divider</h3>
     </div>
     <div class="edit-area" data-type="dividerEdit">
             Divider Editor
+        <a href="#" class="button save">Save</a>
     </div>
     <div class="edit-container">
-        <a href="#" class="edit-link edit" aria-label="edit this block" data-module="editLink"></a>
-        <a href="#" class="edit-link copy" aria-label="copy this block" data-module="copyLink"></a>
-        <a href="#" class="edit-link delete" aria-label="delete this block" data-module="deleteLink"></a>
+        <a href="#" class="edit-link edit" aria-label="edit this block"></a>
+        <a href="#" class="edit-link copy" aria-label="copy this block"></a>
+        <a href="#" class="edit-link delete" aria-label="delete this block"></a>
     </div>
 </div>
                     </div>
@@ -92,22 +95,10 @@
           <section id="templateArea" class="span-12 span-8@tablet template-area">
     <div class="email-container">
         <table>
-            <thead>
-                <tr>
-                    <th>
-                        <div id="headerArea" class="drag-area"></div>
-                    </th>
-                </tr>
-            </thead>
             <tbody>
                 <tr>
                     <td>
                         <div id="contentArea" class="drag-area"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div id="footerArea" class="drag-area"></div>
                     </td>
                 </tr>
             </tbody>

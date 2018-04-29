@@ -1,13 +1,14 @@
-<div class="block block--{{ name }}" draggable="true" aria-label="{{ name }} block" data-module="block{{ name | capitalize }}">
+<div class="block block--{{ name }}" draggable="true" aria-label="{{ name }} block">
     <div class="content-container">
         <h3>{{ name | capitalize }}</h3>
     </div>
     <div class="edit-area" data-type="{{ name }}Edit">
         {% block edit_area %}{% endblock %}
+        <a href="#" class="button save">Save</a>
     </div>
     <div class="edit-container">
-        <a href="#" class="edit-link edit" aria-label="edit this block" data-module="editLink"></a>
-        <a href="#" class="edit-link copy" aria-label="copy this block" data-module="copyLink"></a>
-        <a href="#" class="edit-link delete" aria-label="delete this block" data-module="deleteLink"></a>
+        <a href="#" class="edit-link edit" aria-label="edit this block"></a>
+        <a href="#" class="edit-link copy" aria-label="copy this block"></a>
+        <a href="#" class="edit-link delete" aria-label="delete this block"></a>
     </div>
 </div>

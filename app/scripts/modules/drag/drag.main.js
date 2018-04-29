@@ -5,9 +5,9 @@ module.exports = class Drag {
   constructor(el){
     this.el = el
     
-    const drake = dragula([document.querySelector('#toolbarArea'), document.querySelector('#headerArea') , document.querySelector('#contentArea'), document.querySelector('#footerArea')], {
-      copy: (el, source) => source === document.querySelector('#toolbarArea'),
-      accepts: (el, target) => target !== document.querySelector('#toolbarArea'),
+    const drake = dragula([document.querySelector('#dragArea'), document.querySelector('#headerArea') , document.querySelector('#contentArea'), document.querySelector('#footerArea')], {
+      copy: (el, source) => source === document.querySelector('#dragArea'),
+      accepts: (el, target) => target !== document.querySelector('#dragArea'),
       invalid: (el, handle) => false,
       direction: 'vertical',
       copySortSource: false,

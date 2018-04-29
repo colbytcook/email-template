@@ -1,10 +1,10 @@
-<section id="toolbarArea" class="span-12 span-4@tablet toolbar">
+<section class="span-12 span-4@tablet toolbar">
     <div class="content-area">
         <h1>{{ title }}</h1>
         <p>To start, please drag a content block into the email template.</p>
     </div>
     <div class="block-container">
-        <div class="block-area">
+        <div class="block-area" id="dragArea">
             {% for blockItem in blockList %}
                 {% include '@includes/3_components/block--router.twig' with blockItem only %}
             {% endfor %}
