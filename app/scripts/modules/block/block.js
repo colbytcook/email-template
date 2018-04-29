@@ -2,6 +2,7 @@ const EditDivider = require('../editDivider/editDivider.js')
 const EditImage = require('../editImage/editImage.js')
 const EditText = require('../editText/editText.js')
 const Save = require('../save/save.js')
+let editDivider, editImage, editText, saveEmail, save
 
 module.exports = class Block {
   constructor(el){
@@ -32,13 +33,13 @@ module.exports = class Block {
     const blockClone = block.cloneNode(true)
     block.parentNode.insertBefore(blockClone, block.parentNode.firstChild)
     this.clickEvents(blockClone)
-    const save = new Save(e)
+    save = new Save(e)
   }
   delete(e){
     e.preventDefault()
     const block = e.currentTarget.parentNode.parentNode
     block.parentNode.removeChild(block)
-    const save = new Save(e)
+    save = new Save(e)
   }
   edit(e){
     e.preventDefault()
@@ -91,16 +92,16 @@ module.exports = class Block {
     }
   }
   editDivider(el){
-    const editDivider = new EditDivider(el)
+    editDivider = new EditDivider(el)
   }
   editImage(el){
-    const editImage = new EditImage(el)
+    editImage = new EditImage(el)
   }
   editText(el){
-    const editText = new EditText(el)
+    editText = new EditText(el)
   }
   save(e){
     e.preventDefault()
-    const saveEmail = new Save(this)
+    saveEmail = new Save(e.currentTarget.parentNode.parentNode)
   }
 }

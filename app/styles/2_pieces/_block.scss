@@ -38,7 +38,7 @@ $mobileBlock: 60px;
         }
     }
     &:before{
-        color:$green;
+        color:$yellow;
         display: block;
         font-family:'icomoon';
         font-size: 22px;
@@ -87,11 +87,12 @@ $mobileBlock: 60px;
     .edit-container{
         display:none;
         position: absolute;
-        right: -41px;
+        right: 0;
         top: 0;
         .edit-link{
             background-color:$white;
             display: block;
+            float: left;
             height: 40px;
             position: relative;
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;

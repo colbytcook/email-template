@@ -1,10 +1,11 @@
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+let ckEditor
 
 module.exports = class TextEdit {
   constructor(el){
     this.el = el
     let editorValue
-    const ckEditor = el.querySelector('.ck-editor')
+    ckEditor = el.querySelector('.ck-editor')
     if(ckEditor === null){
       ClassicEditor.create(this.el.getElementsByTagName('textarea')[0], {
         toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|', 'undo', 'redo']
