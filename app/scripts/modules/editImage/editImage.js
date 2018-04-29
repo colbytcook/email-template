@@ -1,5 +1,5 @@
 module.exports = class ImageEdit {
-  constructor(el){
-
+  constructor(){
+    console.log('Edit Image')
   }
 }

@@ -1,5 +1,6 @@
 module.exports = class DividerEdit {
   constructor(el){
-    this.el = el
+    console.log('Edit Divider');
+    
   }
 }

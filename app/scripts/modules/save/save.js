@@ -7,10 +7,10 @@ module.exports = class Save {
       utilities.saveToStorage()
     }
   }
-  saveDivider(el){
+  saveDivider(){
     utilities.setStorage()
   }
-  saveImage(el){
+  saveImage(){
     utilities.setStorage()
   }
   saveText(el){
